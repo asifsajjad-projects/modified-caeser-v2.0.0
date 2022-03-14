@@ -1,0 +1,65 @@
+  <!DOCTYPE html>
+  <html lang -'en'>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hidden caeser</title>
+        <link rel="stylesheet" href="css/caeser.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+
+      
+      
+        <h1>CAESER Encryption v2.0.0</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Enter your text</legend>
+          <label for="name">Text please:</label>
+          <input type="password" id="ctext" name="text">
+          <input type="checkbox" onclick="visibility()">Show Text
+          <br><br>
+          
+          <label for="password">Key please:</label>
+          <input type="password" id="ckey" name="key">
+          
+          <label>Location:</label>
+          <input type="radio" id="pat" value="OFfice" name="location"><label for="pat" class="light">Work</label><br>
+          <input type="radio" id="ban" value="hoMe" name="location"><label for="ban" class="light">Home</label><br>
+          <input type="radio" id="del" value="govT" name="location"><label for="del" class="light">Govt.</label><br>
+          <input type="radio" id="mum" value="onetIme" name="location"><label for="mum" class="light">One time</label><br>
+          <input type="radio" id="goa" value="sociaL" name="location"><label for="goa" class="light">Social Media</label><br>
+          <input type="radio" id="mum" value="multimedIa" name="location"><label for="mum" class="light">Multimedia</label>
+        </fieldset>
+        
+        <fieldset>
+          <legend><span class="number">2</span>Your Output</legend>
+          <label for="bio">Your encrypted/decrypted key status:</label>
+          <textarea id="out" name="result"></textarea>
+        </fieldset>
+       
+        <button onClick="start()">Generate and copy</button>
+      
+      <script src="js/hiddenCaeser.js">      </script> 
+      <script>
+		if('serviceWorker' in navigator) {
+		  navigator.serviceWorker
+			   .register('/sw.js')
+			   .then(function() { console.log("Service Worker Registered"); });
+		}
+	</script>
+	<script>
+		function visibility() {
+		  var x = document.getElementById("ctext");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+		} 
+	</script>
+
+    </body>
+</html>
